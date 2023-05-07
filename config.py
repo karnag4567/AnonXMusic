@@ -14,19 +14,19 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID"))
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "ᴀɴᴏɴ ダ ᴍᴜsɪᴄ")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "Thunderx Music")
 
-OWNER_ID = list(map(int, getenv("OWNER_ID", "1356469075").split()))
+OWNER_ID = list(map(int, getenv("OWNER_ID", "5835108701").split()))
 
 HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
 
-UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/AnonymousX1025/AnonXMusic")
-UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
+UPSTREAM_REPO = getenv("UPSTREAM_REPO", None)
+UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", None)
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/FallenAssociation")
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/DevilsHeavenMF")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/thunderxmusic")
+SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/thunderxmusic_chat")
 
 SUPPORT_HEHE = SUPPORT_GROUP.split("me/")[1]
 
@@ -119,13 +119,6 @@ SONG_DOWNLOAD_DURATION_LIMIT = int(
     time_to_seconds(f"{SONG_DOWNLOAD_DURATION}:00")
 )
 
-
-if UPSTREAM_REPO:
-    if not re.match("(?:http|https)://", UPSTREAM_REPO):
-        print(
-            "[ERROR] - Your UPSTREAM_REPO url is wrong. Please ensure that it starts with https://"
-        )
-        sys.exit()
 
 if PING_IMG_URL:
     if PING_IMG_URL != "assets/Ping.jpeg":
